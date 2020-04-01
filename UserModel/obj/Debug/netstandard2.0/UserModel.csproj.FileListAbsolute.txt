@@ -1,0 +1,7 @@
+C:\Users\Welcome\source\repos\WebApplication2\UserModel\bin\Debug\netstandard2.0\UserModel.deps.json
+C:\Users\Welcome\source\repos\WebApplication2\UserModel\bin\Debug\netstandard2.0\UserModel.dll
+C:\Users\Welcome\source\repos\WebApplication2\UserModel\bin\Debug\netstandard2.0\UserModel.pdb
+C:\Users\Welcome\source\repos\WebApplication2\UserModel\obj\Debug\netstandard2.0\UserModel.AssemblyInfoInputs.cache
+C:\Users\Welcome\source\repos\WebApplication2\UserModel\obj\Debug\netstandard2.0\UserModel.AssemblyInfo.cs
+C:\Users\Welcome\source\repos\WebApplication2\UserModel\obj\Debug\netstandard2.0\UserModel.dll
+C:\Users\Welcome\source\repos\WebApplication2\UserModel\obj\Debug\netstandard2.0\UserModel.pdb

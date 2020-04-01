@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+</head>
+<body>
+    <div>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Launch demo modal
+        </button>
+        <!-- Modal -->
+        @using (Ajax.BeginForm("Register", "Register", new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "Register" }))
+        {
+
+            <div>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">Model Popup Validations</h4>
+                            </div>
+                            <div class="modal-body" id="frmEmp">
+                                @Html.Partial("_Register")
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-success" value="Submit" id="btnSubmit" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <script>
+        $(document).ready(function () {
+            $("#btnSubmit").click(function (e) {
+
+                $.ajax({
+                    url:"/Register/Register",
+                    type: "post",
+                    dataType: 'json',
+                    data: myModal,
+                    contentType: 'application/json; charset=utf-8',
+                    success: function () {
+                        $("#myModal").modal("hide");
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                    }
+                 });
+            });
+        });
+        </script>
+    </div>
+    
+
+</body>
+</html>

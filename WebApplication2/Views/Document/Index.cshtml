@@ -1,0 +1,514 @@
+﻿@model WebApplication2.Models.MailModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HES</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+         table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #fff;
+}
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        .popupbuttons {
+            background-color: #0181f5;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: red;
+                cursor: pointer;
+            }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @@-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @@keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @@media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <header>
+        <div class="header-area ">
+            <!-- <div class="header-top_area d-none d-lg-block">
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-xl-5 col-md-5 ">
+                             <div class="header_left">
+                                 <p>Welcome to Conbusi consulting service</p>
+                             </div>
+                         </div>
+                         <div class="col-xl-7 col-md-7">
+                             <div class="header_right d-flex">
+                                     <div class="short_contact_list">
+                                             <ul>
+                                                 <li><a href="#"> <i class="fa fa-envelope"></i> info@docmed.com</a></li>
+                                                 <li><a href="#"> <i class="fa fa-phone"></i> 1601-609 6780</a></li>
+                                             </ul>
+                                         </div>
+                                         <div class="social_media_links">
+                                             <a href="#">
+                                                 <i class="fa fa-linkedin"></i>
+                                             </a>
+                                             <a href="#">
+                                                 <i class="fa fa-facebook"></i>
+                                             </a>
+                                             <a href="#">
+                                                 <i class="fa fa-google-plus"></i>
+                                             </a>
+                                         </div>
+                             </div>
+
+                         </div>
+                     </div>
+                 </div>
+             </div> -->
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="@Url.Action("Index", "Home")">
+                                        <img src="img/hes-logo.png" alt="" style="width: 126px; height: 40px;">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="@Url.Action("Index", "Home")">home</a></li>
+                                            <!--<li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                        <li><a href="case_details.html">case details</a></li>
+                                                        <li><a href="about.html">about</a></li>
+                                                        <li><a href="elements.html">elements</a></li>
+                                                </ul>
+                                            </li>-->
+                                            <li>
+                                                <a href="@Url.Action("Index", "Survey")">Study</a>
+                                                <ul class="submenu">
+                                                    <li><a href="@Url.Action("Index", "Survey")#myCarousel">Background</a></li>
+                                                    <li>
+                                                        <a href="#">MethodsSurvey</a>
+                                                        <ul class="submenu" style="left:100%;top:0;">
+                                                            <li><a href="@Url.Action("Index", "Survey")#flowchart">Flowchart</a></li>
+                                                            <li><a href="@Url.Action("Index", "Survey")#sampling plan">Sampling plan</a></li>
+                                                            <li><a href="@Url.Action("Index", "Survey")#phases">Phases</a></li>
+                                                            <li><a href="@Url.Action("Index", "Survey")#section">Section</a></li>
+                                                            <li><a href="@Url.Action("Index", "Survey")#odk">ODK</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("Index", "Expenditure")">Expenditure App</a>
+                                                <ul class="submenu">
+                                                    <li><a href="@Url.Action("Index", "Expenditure")#expenditureobjectives">Objectives</a></li>
+                                                    <li><a href="@Url.Action("Index", "Expenditure")#methods">Methods</a></li>
+                                                    <li><a href="@Url.Action("Index", "Expenditure")#diary x">Diary app</a></li>
+                                                    <li><a href="@Url.Action("Index", "Expenditure")#dashboard">Dashboard</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a class="active" href="@Url.Action("Index", "Document")">Document</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("Index", "Surveymethod")">Data</a>
+                                                <ul class="submenu">
+                                                    @*<li><a href="@Url.Action("Index", "Surveymethod")#objectives">Objectives</a></li>*@
+                                                    @*<li><a href="@Url.Action("Index", "Surveymethod")#sampling">Sampling</a></li>*@
+
+                                                   
+                                                    <li><a href="@Url.Action("Index", "Surveymethod")#data">Data</a></li>
+                                                    <li><a href="@Url.Action("Index", "Surveymethod")#descriptive analysis">Analysis</a></li>
+                                                </ul>
+                                            </li>
+
+
+
+                                            <!--<li><a href="study.html">Case study</a></li>-->
+                                            <!--<li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">blog</a></li>
+                                                    <li><a href="single-blog.html">single-blog</a></li>
+                                                </ul>
+                                            </li>-->
+                                            <li><a href="@Url.Action("Index", "SendMailer")" style="width: 40px;height: 30px;">Contact</a></li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        @{
+                                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                                            {
+                                                <button onclick="location.href='@Url.Action("Login", "Users")'" id="btn_login" style="width:auto;" class="popupbuttons" hidden="hidden">Login</button>
+                                            }
+                                            else
+                                            {
+                                                <button onclick="location.href='@Url.Action("Login", "Users")'" id="btn_login" style="width:auto;" class="popupbuttons">Login</button>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-1 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        @{
+                                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                                            {
+                                                <button onclick="location.href='@Url.Action("Create","Users")'" id="btn_register" hidden="hidden" style="width:auto;" class="popupbuttons">Register</button>
+                                            }
+                                            else
+                                            {
+                                                <button onclick="location.href='@Url.Action("Create","Users")'" id="btn_register" style="width:auto;" class="popupbuttons">Register</button>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-1 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        @{
+                                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                                            {
+                                                <button onclick="location.href='@Url.Action("Logout", "Users")'" id="btn_logout" style="width:auto;" class="popupbuttons">LOGOUT</button>
+                                            }
+                                            else
+                                            {
+                                                <button onclick="location.href='@Url.Action("Logout", "Users")'" id="btn_logout" hidden="hidden" style="width:auto;" class="popupbuttons">LOGOUT</button>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="service_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-50">
+                        <h3>List of documents</h3>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <th>Documents</th>
+                    <th>Downloads</th>
+                </tr>
+                <tr>
+                    <td><p>Protocol</p></td>
+                    <td>
+                        @{
+                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                            {
+                                <button class="btn"><i class="fa fa-download"></i><a href="img/HES_Protocol.pdf" target="_blank" style="color:white;"> Download </a></button>
+                            }
+                            else
+                            {
+                                <button class="btn" onclick="myFunction()"><i class="fa fa-download"></i> Download</button>
+                            }
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Questionnaire</p></td>
+                    <td>
+                        @{
+                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                            {
+                                <button class="btn"><i class="fa fa-download"></i><a href="img/HES_questionnaire.pdf" target="_blank" style="color:white;"> Download </a></button>
+                            }
+                            else
+                            {
+                                <button class="btn" onclick="myFunction()"><i class="fa fa-download"></i> Download</button>
+                            }
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Consent</p></td>
+                    <td>
+                        @{
+                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                            {
+                                <button class="btn"><i class="fa fa-download"></i><a href="img/HES_consent.pdf" target="_blank" style="color:white;"> Download </a></button>
+                            }
+                            else
+                            {
+                                <button class="btn" onclick="myFunction()"><i class="fa fa-download"></i> Download</button>
+                            }
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Guidelines</p></td>
+                    <td>
+                        @{
+                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                            {
+                                <button class="btn"><i class="fa fa-download"></i><a href="img/HES_guidelines.pdf" target="_blank" style="color:white;"> Download </a></button>
+                            }
+                            else
+                            {
+                                <button class="btn" onclick="myFunction()"><i class="fa fa-download"></i> Download</button>
+                            }
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Data dictionary</p></td>
+                    <td>
+                        @{
+                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                            {
+                                <button class="btn"><i class="fa fa-download"></i><a href="img/HES_data dictionary.xlsx" target="_blank" style="color:white;"> Download </a></button>
+                            }
+                            else
+                            {
+                                <button class="btn" onclick="myFunction()"><i class="fa fa-download"></i> Download</button>
+                            }
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>smartphone receipt</p></td>
+                    <td>
+                        @{
+                            if (!string.IsNullOrEmpty(Session["Username"] as string))
+                            {
+                                <button class="btn"><i class="fa fa-download"></i><a href="img/Smartphone receipt.pdf" target="_blank" style="color:white;"> Download </a></button>
+                            }
+                            else
+                            {
+                                <button class="btn" onclick="myFunction()"><i class="fa fa-download"></i> Download</button>
+                            }
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="https://www.cmch-vellore.edu/" target="_blank">CMC</a>-Vellore
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+        function myFunction() {
+            alert("Hello! please login to download!");
+        }
+    </script>
+</body>
+</html>
